@@ -1,5 +1,6 @@
 package model.support;
 
+import model.support.report.Report;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
@@ -21,6 +22,6 @@ public class TestBase extends DriverManager {
     @AfterEach
     public void closeDriver(){
         quitDriver();
-        //Report.quit();
+        Report.quit();
     }
 }
