@@ -1,6 +1,13 @@
 package model;
 
-public class User {
+import com.github.javafaker.Faker;
+import org.openqa.selenium.WebDriver;
+
+import java.util.Locale;
+
+public class FakerGenerator {
+
+    private Faker faker;
     private String name;
     private String lastName;
     private String email;
@@ -10,7 +17,12 @@ public class User {
     private String gender;
     private int age;
 
+    public FakerGenerator(WebDriver driver){
+        faker = new Faker(new Locale("pt-BR"));
+    }
+
     public String getName() {
+        name = faker.name().firstName();
         return name;
     }
 
@@ -19,6 +31,7 @@ public class User {
     }
 
     public String getLastName() {
+        lastName = faker.name().lastName();
         return lastName;
     }
 
@@ -27,6 +40,7 @@ public class User {
     }
 
     public String getEmail() {
+        email = faker.internet().emailAddress();
         return email;
     }
 
@@ -35,6 +49,7 @@ public class User {
     }
 
     public String getAddress() {
+        address = faker.address().streetAddress();
         return address;
     }
 
@@ -43,6 +58,7 @@ public class User {
     }
 
     public String getUniversity() {
+        university = faker.university().name();
         return university;
     }
 
@@ -51,6 +67,7 @@ public class User {
     }
 
     public String getProfession() {
+        profession = faker.job().title();
         return profession;
     }
 
@@ -67,6 +84,7 @@ public class User {
     }
 
     public int getAge() {
+        age = faker.number().randomDigit();
         return age;
     }
 

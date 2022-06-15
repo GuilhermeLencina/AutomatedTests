@@ -1,4 +1,4 @@
-package tests;
+package tests.form;
 
 import model.support.TestBase;
 import model.support.report.Report;
