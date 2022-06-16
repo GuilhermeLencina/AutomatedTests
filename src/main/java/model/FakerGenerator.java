@@ -15,7 +15,7 @@ public class FakerGenerator {
     private String university;
     private String profession;
     private String gender;
-    private int age;
+    private String age;
 
     public FakerGenerator(WebDriver driver){
         faker = new Faker(new Locale("pt-BR"));
@@ -83,12 +83,12 @@ public class FakerGenerator {
         this.gender = gender;
     }
 
-    public int getAge() {
-        age = faker.number().randomDigit();
+    public String getAge() {
+        age = faker.numerify("50");
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 }
